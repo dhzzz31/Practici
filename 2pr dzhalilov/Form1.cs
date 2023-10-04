@@ -27,7 +27,7 @@ namespace _2pr_dzhalilov
         // for the multiplication problem.
         int multiplicand;
         int multiplier;
-        // These integer 
+        // These integer  
         public void StartTheQuiz()
         {
             //Fill in the addition problem.
