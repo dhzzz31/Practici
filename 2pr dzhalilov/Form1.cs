@@ -27,7 +27,11 @@ namespace _2pr_dzhalilov
         // for the multiplication problem.
         int multiplicand;
         int multiplier;
-        // These integer  
+        int divident;
+        int divisor;
+        int timeleft; 
+
+
         public void StartTheQuiz()
         {
             //Fill in the addition problem.
@@ -44,6 +48,36 @@ namespace _2pr_dzhalilov
             // This step makes sure its value is zero before
             // adding any values to it.
             sum.Value = 0;
+            minuend = randomizer.Next(1, 101);
+            subtrahend = randomizer.Next(1, minuend);
+            minusLeftLabel.Text = minuend.ToString();
+            minusRightLabel.Text = subtrahend.ToString();
+            difference.Value = 0;
+            multiplicand = randomizer.Next(2, 11);
+            multiplier = randomizer.Next(2, 11);
+            timesLeftLabel.Text = multiplicand.ToString();
+            timesRightLabel.Text = multiplier.ToString();
+            product.Value = 0;
+            divisor = randomizer.Next(2, 11);
+            int temporaryQuotient = randomizer.Next(2, 11);
+            divident = divisor * temporaryQuotient;
+            dividedLeftLabel.Text = divident.ToString();
+            dividedRightLabel.Text = divisor.ToString();
+            quotient.Value = 0;
+
+
+        }
+        private bool CheckTheAnswer()
+        {
+            if ((addent1 + addent2 == sum.Value)
+                && (minuend - subtrahend == difference.Value)
+                && (multiplicand * multiplier == product.Value)
+                && (divident / divisor == quotient.Value))
+                return true;
+            else
+                return false;
+
+
         }
         public Form1()
         {
@@ -93,6 +127,25 @@ namespace _2pr_dzhalilov
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            StartTheQuiz();
+            startButton.Enabled = false;
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (CheckTheAnswer())
+            {
+                timer1.Stop(); 
+                MessageBox.Show("You got all the answers right!"),
+                    "Congratulations!");
+                startButton.Enabled = true;
+
+            }
         }
     }
 }
