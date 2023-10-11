@@ -140,12 +140,48 @@ namespace _2pr_dzhalilov
         {
             if (CheckTheAnswer())
             {
-                timer1.Stop(); 
-                MessageBox.Show("You got all the answers right!"),
-                    "Congratulations!");
+                timer1.Stop();
+                MessageBox.Show("You got all the answers right! Congratulations!");
+
                 startButton.Enabled = true;
 
             }
+            else if (timeleft > 0)
+            {
+                timeleft = timeleft - 1;
+                timeLabel.Text = timeleft + "seconds";
+            }
+            else
+            {
+                timer1.Stop();
+                timeLabel.Text = "Time's up!";
+                MessageBox.Show("You didn't finish in time.", "Sorry!");
+                sum.Value = addent1 + addent2;
+                difference.Value = minuend - subtrahend;
+                product.Value = divident / divisor;
+                startButton.Enabled = true;
+
+            }
+            timeleft = 30;
+            timeLabel.Text = "30 seconds";
+            timer1.Start();
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown answerBox = sender as NumericUpDown;
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
+            timeLabel.BackColor = Color.Red;
         }
     }
 }

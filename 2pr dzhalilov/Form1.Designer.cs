@@ -107,8 +107,9 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 50);
             this.label3.TabIndex = 4;
-            this.label3.Text = "+";
+            this.label3.Text = "=";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -128,6 +129,7 @@
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 35);
             this.sum.TabIndex = 1;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
@@ -136,6 +138,7 @@
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(100, 35);
             this.difference.TabIndex = 2;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label2
             // 
@@ -154,7 +157,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 50);
             this.label5.TabIndex = 9;
-            this.label5.Text = "+";
+            this.label5.Text = "=";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // minusRightLabel
@@ -185,6 +188,7 @@
             this.product.Size = new System.Drawing.Size(100, 35);
             this.product.TabIndex = 3;
             this.product.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
             // 
@@ -204,7 +208,7 @@
             this.lebel6.Name = "lebel6";
             this.lebel6.Size = new System.Drawing.Size(60, 50);
             this.lebel6.TabIndex = 14;
-            this.lebel6.Text = "+";
+            this.lebel6.Text = "=";
             this.lebel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lebel6.Click += new System.EventHandler(this.label9_Click);
             // 
@@ -237,6 +241,7 @@
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(100, 35);
             this.quotient.TabIndex = 4;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
             // 
@@ -255,7 +260,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 50);
             this.label13.TabIndex = 19;
-            this.label13.Text = "+";
+            this.label13.Text = "=";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dividedRightLabel
